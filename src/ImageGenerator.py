@@ -7,8 +7,8 @@ import sys
 
 
 
-size = 500
-places = 5
+size = 1000
+places = 25
 prev = 0
 curr = 0
 canvas = np.ones((size,size, 3), dtype=np.uint8)  * 255
@@ -59,7 +59,7 @@ def rotateAndPlace(image, rotation_angle,x,y,canvas):
 
 # Generate random circle centers
 centers = []
-print("Choosing position <",end='\r')
+print(" Choosing position <",end='\r')
 while len(centers) < places:
     # Generate a random circle center
     center = np.random.randint(radius, size - radius, size=(2,))
@@ -81,7 +81,7 @@ while len(centers) < places:
 print(">")
 prev = 0
 curr = 0
-print("Drawing image     <",end='\r')
+print(" Drawing image     <",end='\r')
 # Draw image on each center position with random rotation angle (90,180,270)
 for center in centers:
     angle  = random.choice(rotation_list)
